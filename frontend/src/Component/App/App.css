@@ -1,0 +1,15 @@
+.chatbot-icon-btn{
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border-style: none;
+    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+}
+.chatbot-icon-btn:hover {
+    cursor: pointer;
+    box-shadow: 1px 10px 32px rgba(0, 0, 0, 0.45);
+    transition: all 0.3s ease-in-out;
+}
