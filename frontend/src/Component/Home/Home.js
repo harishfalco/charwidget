@@ -1,8 +1,12 @@
 import React,{useState} from 'react'
 import {withStyles} from '@material-ui/core/styles'
 import {Card , CardHeader , CardContent , CardActions ,Typography,AppBar,Tab,Tabs} from '@material-ui/core/'
-import Feedback from "../Feedback/Feedback"
+
 import "./Home.css"
+
+import FeatureReport from '../FeatureReport/FeatureReport'
+import Bugreport from '../BugReport/Bugreport'
+import Feedback from "../Feedback/Feedback"
 
 
 const styles = theme =>({
@@ -13,6 +17,9 @@ const styles = theme =>({
         background:'green',
         boxShadow:'none',
         color:"white"
+    },
+    cardContent:{
+      padding:"10px"
     },
     activeTab:{
         borderRadius:'40px',
@@ -50,7 +57,7 @@ const Home = withStyles(styles)(({ classes }) => {
         {
             active:false,
             label:"feature-report",
-            content:"feature report"
+            content:<FeatureReport />
         },
         {
             active:false,
@@ -66,7 +73,7 @@ const Home = withStyles(styles)(({ classes }) => {
             .map((tab,index) => ({...tab,active:index === value}))
         );
     }
-
+    
     const active = value.findIndex(tab => tab.active);
     console.log(active +" is avtive")
     const content = value[active].content;
@@ -102,7 +109,7 @@ const Home = withStyles(styles)(({ classes }) => {
 
                 </Tabs>
                 </AppBar>
-                <CardContent>
+                <CardContent className={classes.cardContent}>
                     {content}
                 </CardContent>  
         </Card>

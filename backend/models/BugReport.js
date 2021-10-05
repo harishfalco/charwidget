@@ -11,7 +11,7 @@ const bugReport = new mongoose.Schema({
         requried:true,
         trim:true
     },
-    reproduce_steps:{
+    steps:{
         type:"String",
         requried:true,
         trim:true
